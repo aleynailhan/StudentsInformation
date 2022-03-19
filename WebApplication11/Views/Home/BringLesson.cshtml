@@ -1,0 +1,19 @@
+﻿@model WebApplication11.Models.EntityFramework.tbl_lessons
+@{
+    ViewBag.Title = "BringLesson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update","Home",FormMethod.Post))
+            {
+<div class="form-group">
+    @Html.LabelFor(m => m.LESSONNAME)
+    @Html.TextBoxFor(m => m.LESSONNAME, new { @class = "form-control" })
+</div>
+@Html.HiddenFor(m=>m.LESSONID)
+    <div style="margin-top:15px">
+
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+            }
+

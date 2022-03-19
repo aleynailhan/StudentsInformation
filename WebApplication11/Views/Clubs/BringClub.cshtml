@@ -1,0 +1,20 @@
+﻿@model WebApplication11.Models.EntityFramework.tbl_clubs
+@{
+    ViewBag.Title = "BringClub";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update","Clubs",FormMethod.Post))
+            {
+    <div class="form-group">
+        @Html.LabelFor(m=>m.CLUBNAME)
+        @Html.TextBoxFor(m=>m.CLUBNAME, new { @class = "form-control"})
+
+
+    </div>
+    @Html.HiddenFor(m=>m.CLUBID)
+    <div>
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+            }
+

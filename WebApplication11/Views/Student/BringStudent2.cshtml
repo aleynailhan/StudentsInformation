@@ -1,0 +1,35 @@
+﻿@model WebApplication11.Models.EntityFramework.tbl_students
+@{
+    ViewBag.Title = "BringStudent2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update","Student",FormMethod.Post))
+            {
+                <div class="form-group">
+
+                    @Html.LabelFor(m=>m.STUDENTNAME)
+                    @Html.TextBoxFor(m=>m.STUDENTNAME , new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.STUDENTSURNAME)
+                    @Html.TextBoxFor(m=>m.STUDENTSURNAME, new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.STUDENTPHOTO)
+                    @Html.TextBoxFor(m=>m.STUDENTPHOTO, new { @class="form-control"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.STUDENTGENDER)
+                    @Html.TextBoxFor(m=>m.STUDENTGENDER, new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.STUDENTCLUB)
+                    @Html.TextBoxFor(m=>m.STUDENTCLUB , new {@class="form-control"})
+                </div>
+                @Html.HiddenFor(m=>m.STUDENTID)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+            }
+

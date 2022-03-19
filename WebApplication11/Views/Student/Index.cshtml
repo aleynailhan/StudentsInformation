@@ -1,0 +1,39 @@
+﻿@using WebApplication11.Models.EntityFramework;
+@model List<tbl_students>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Öğrenci Id</th>
+        <th> Adı</th>
+        <th>Soyadı</th>
+        <th> Fotoğrafı</th>
+        <th>Cinsiyeti</th>
+        <th>Kulübü</th>
+        <th>İşlemler</th>
+    </tr>
+    <tbody>
+
+        @foreach (var ogr in Model)
+        {
+        <tr>
+            <td>@ogr.STUDENTID</td>
+            <td>@ogr.STUDENTNAME</td>
+            <td>@ogr.STUDENTSURNAME</td>
+            <td>@ogr.STUDENTPHOTO</td>
+            <td>@ogr.STUDENTGENDER</td>
+            <td>@ogr.tbl_clubs.CLUBNAME</td>
+            <td>
+                <a href="/Student/RemoveStudent/@ogr.STUDENTID" class="btn btn-danger">Sil</a>
+                <a href="/Student/BringStudent2/@ogr.STUDENTID" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+<a href="/Student/NewStudent" class="btn btn-info">Yeni Öğrenci Ekle</a>

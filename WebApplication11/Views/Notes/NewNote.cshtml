@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "NewNote";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Id</label>
+        <input type="text" class="form-control" name="STUDENTID" />
+    </div>
+    <div>
+        <label>Ders Adı</label>
+        <input type="text" class="form-control" name="LESSONID" />
+    </div>
+    <div>
+        <label>Sınav 1</label>
+        <input type="text" class="form-control" name="EXAM1" />
+    </div>
+    <div>
+        <label>Sınav 2</label>
+        <input type="text" class="form-control" name="EXAM2" />
+    </div>
+    <div>
+        <label>Sınav 3</label>
+        <input type="text" class="form-control" name="EXAM3" />
+    </div>
+    <div>
+        <label>Proje</label>
+        <input type="text" class="form-control" name="PROJECT" />
+    </div>
+    <div>
+        <label>Ortalama</label>
+        <input type="text" class="form-control" name="AVERAGE" />
+    </div>
+    <div>
+        <label>Durum</label>
+        <input type="text" class="form-control" name="STATUS" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Ekle</button>
+    </div>
+</form>
+

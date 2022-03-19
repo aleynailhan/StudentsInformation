@@ -1,0 +1,31 @@
+﻿@using WebApplication11.Models.EntityFramework;
+@model List<tbl_lessons>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<table class="table table-bordered">
+
+    <tr>
+
+        <th>Ders Id</th>
+        <th>Ders Adı</th>
+        <th>İşlemler</th>
+    </tr>
+    
+    <tbody>
+        @foreach(var drs in Model)
+            {
+        <tr>
+            <td>@drs.LESSONID</td>
+            <td>@drs.LESSONNAME</td>
+            <td><a href="/Home/RemoveLesson/@drs.LESSONID" class="btn btn-danger">Sil</a>
+            <a href="/Home/BringLesson/@drs.LESSONID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+            }
+    </tbody>
+</table>
+<a href="/Home/NewLesson" class="btn btn-primary">Yeni Ders Ekle</a>

@@ -1,0 +1,58 @@
+﻿@model WebApplication11.Models.EntityFramework.tbl_notes
+@{
+    ViewBag.Title = "BringNote";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("BringNote", "Notes", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.STUDENTID)
+        @Html.TextBoxFor(m => m.STUDENTID, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.EXAM1)
+        @Html.TextBoxFor(m => m.EXAM1, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.EXAM2)
+        @Html.TextBoxFor(m => m.EXAM2, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.EXAM3)
+        @Html.TextBoxFor(m => m.EXAM3, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.PROJECT)
+        @Html.TextBoxFor(m => m.PROJECT, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.AVERAGE)
+        @Html.TextBoxFor(m => m.AVERAGE, new { @Value= @ViewBag.o, @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.STATUS)
+        @Html.TextBoxFor(m => m.STATUS, new { @class = "form-control" })
+
+    </div>
+    @Html.HiddenFor(m=>m.NOTEID)
+    <div style="margin-top:15px">
+        <button type="submit" name="islem" value="HESAPLA"class="btn btn-info">Hesapla</button><br /><br />
+        <button type="submit" name="islem" value="GUNCELLE" class="btn btn-group">Güncelle</button>
+      
+    </div>
+}
+

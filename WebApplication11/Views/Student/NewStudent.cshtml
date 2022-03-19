@@ -1,0 +1,32 @@
+﻿@model WebApplication11.Models.EntityFramework.tbl_students
+@{
+    ViewBag.Title = "NewStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Adı</label>
+        <input type="text" class="form-control" name="STUDENTNAME" />
+    </div>
+    <div>
+        <label>Öğrenci Soyadı</label>
+        <input type="text" class="form-control" name="STUDENTSURNAME" />
+    </div>
+    <div>
+        <label>Öğrenci Fotoğrafı</label>
+        <input type="text" class="form-control" name="STUDENTPHOTO" />
+    </div>
+    <div>
+        <label>Öğrenci Cinsiyeti</label>
+        <input type="text" class="form-control" name="STUDENTGENDER" />
+    </div>
+    <div>
+        <label>Öğrenci Kulübü</label>
+        @Html.DropDownListFor(m => m.tbl_clubs.CLUBID,(List<SelectListItem>)ViewBag.dgr, new { @class="form-control"})
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Ekle</button>
+    </div>
+</form>
+
